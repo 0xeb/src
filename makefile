@@ -810,6 +810,8 @@ ifneq ($(OUT_OF_TREE_BUILD),)
 else
   ifndef NDEBUG
     $(F)idapyswitch$(O): CFLAGS := $(filter-out /U_DEBUG,$(CFLAGS))
+  else
+    $(F)idapyswitch$(O): RUNTIME_LIBSW=/MT
   endif
 endif
 endif
